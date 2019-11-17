@@ -1,4 +1,6 @@
 ﻿using System;
+using aula9_enumeracao.Entities;
+using aula9_enumeracao.Entities.Enums;
 
 namespace aula9_enumeracao
 {
@@ -6,7 +8,23 @@ namespace aula9_enumeracao
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Order order = new Order
+            {
+                Id = 100,
+                Moment = DateTime.Now,
+                Status = OrderStatus.PendingPayment
+
+            };
+
+            Console.WriteLine(order);
+
+            string txt = OrderStatus.PendingPayment.ToString();
+
+            OrderStatus os = Enum.Parse<OrderStatus>("Delivered");
+
+            Console.WriteLine(txt);
+            Console.WriteLine(os);
+
         }
     }
 }
